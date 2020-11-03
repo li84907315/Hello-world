@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailyuse.mapper.UserRegister">
+     <resultMap type="com.dailyuse.model.UsersVo" id="userRegister">
+     <id property="userId" column="user_id"/>
+
+     <result property="userName" column="user_name"/>
+         <result property="userPwd" column="user_pwd"/>
+         <result property="userPhone" column="user_phone"/>
+
+
+     </resultMap>
+
+    <insert id="regist" parameterType="com.dailyuse.model.UsersVo"  >
+        insert into users(user_phone,user_pwd)
+        VALUES(#{userName}, #{userPwd});
+    </insert>
+
+
+
+	
+</mapper>
